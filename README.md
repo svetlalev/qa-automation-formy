@@ -21,6 +21,13 @@ Easiest way to run the tests is by executing in the project main directory:
 ```
 bundle exec rspec
 ```
+
+## Notes for the Navigation bar
+The navigation bar of the web app gets cut down on smaller resolutions and the "Form" and "Components" sections become invisible. As some of the tests I wrote make use of the Components dropodown in the navigation bar, I set a bigger window size while registering the driver by adding "window-size" in the chrome options:
+```
+args: %w[headless enable-features=NetworkService,NetworkServiceInProcess window-size=1240,1400]
+```
+
 ## Notes for the tests
 Currently 2 tests are failing. This is due to bugs I found in the web app. These tests are:
 
