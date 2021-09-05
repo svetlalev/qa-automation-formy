@@ -21,7 +21,7 @@ Easiest way to run the tests is by executing in the project main directory:
 ```
 bundle exec rspec
 ```
-##Notes for the tests
+## Notes for the tests
 Currently 2 tests are failing. This is due to bugs I found in the web app. These tests are:
 
 * "Complete form Education level Select two education levels and fist one gets unchecked" - you can check multiple radio buttons (and cannot uncheck already checked one)
