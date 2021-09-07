@@ -18,8 +18,8 @@ Capybara.register_driver :headless_chrome do |app|
   )
 
   Capybara::Selenium::Driver.new app,
-    browser: :chrome,
-    desired_capabilities: capabilities
+                                 browser: :chrome,
+                                 desired_capabilities: capabilities
 end
 
 Capybara.app_host = 'https://formy-project.herokuapp.com/'

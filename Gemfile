@@ -1,10 +1,9 @@
 source 'https://rubygems.org'
 
-gem 'rspec'
 gem 'capybara'
-gem 'selenium-webdriver'
+gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
 gem 'pry'
-gem 'webdrivers', '~> 4.0'
-gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
+gem 'rspec'
 gem 'rubocop', '~> 1.20', require: false
-
+gem 'selenium-webdriver'
+gem 'webdrivers', '~> 4.0'
