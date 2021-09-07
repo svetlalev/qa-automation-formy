@@ -37,7 +37,7 @@ module Pages
 
     def submit_form
       click_on('Submit')
-      return success_page = Pages::Success.new
+      success_page = Pages::Success.new
     end
 
     def has_checked_education?(selected_education_level)
