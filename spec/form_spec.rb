@@ -1,9 +1,9 @@
 include NavigationHelper
 
 describe 'Complete form', type: :feature do
-  let(:first_name) { 'Svetoslav' }
-  let(:last_name) { 'Lalev' }
-  let(:job_title) { 'Automation QA' }
+  let(:first_name) { Faker::Name.first_name }
+  let(:last_name) { Faker::Name.last_name }
+  let(:job_title) { Faker::Job.title }
   let(:education_level) { 'College' }
   let(:gender) { 'Male' }
   let(:experience_level) { '2-4' }
@@ -13,7 +13,7 @@ describe 'Complete form', type: :feature do
   context 'Education level' do
     before { @form_page.select_education_level(education_level) }
 
-    example 'Select only one edeucation level' do
+    example 'Select only one education level' do
       expect(@form_page).to have_checked_education(education_level)
     end
 
