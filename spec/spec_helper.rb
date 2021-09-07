@@ -1,6 +1,7 @@
 require 'selenium-webdriver'
 require 'capybara/rspec'
 require 'pry'
+require 'webdrivers'
 
 Dir['spec/support/**/*.rb'].each { |f| require_relative "../#{f}" }
 

@@ -14,7 +14,6 @@ In  order to set up the project locally, the following actions need to be taken:
 ```
 bundle install
 ```
-**Important note:** In order to run the tests you need to have chromedriver.
 
 ## Running the tests
 Easiest way to run the tests is by executing in the project main directory:
