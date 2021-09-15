@@ -1,6 +1,8 @@
 require 'selenium-webdriver'
 require 'capybara/rspec'
 require 'pry'
+require 'webdrivers'
+require 'faker'
 
 Dir['spec/support/**/*.rb'].each { |f| require_relative "../#{f}" }
 
@@ -16,8 +18,8 @@ Capybara.register_driver :headless_chrome do |app|
   )
 
   Capybara::Selenium::Driver.new app,
-    browser: :chrome,
-    desired_capabilities: capabilities
+                                 browser: :chrome,
+                                 desired_capabilities: capabilities
 end
 
 Capybara.app_host = 'https://formy-project.herokuapp.com/'

@@ -7,7 +7,7 @@ module NavigationHelper
 
   def go_to_form_page
     visit('form')
-    return Pages::Form.new
+    Pages::Form.new
   end
 
   def has_path?(path)
