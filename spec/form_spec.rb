@@ -53,12 +53,27 @@ describe 'Complete form', type: :feature do
 
   context 'Submit' do
     example 'Form' do
-      @form_page.fill_in_names_with(first_name, last_name)
+      @form_page.fill_in_names_with(first_name: first_name, last_name: last_name)
       @form_page.fill_in_job_title_with(job_title)
       @form_page.select_education_level(education_level)
       @form_page.select_gender(gender)
       @form_page.select_experience_level(experience_level)
       @form_page.select_todays_date
+      submitted_page = @form_page.submit_form
+
+      expect(submitted_page).to have_thank_you_message
+      expect(submitted_page).to have_success_message('The form was successfully submitted!')
+    end
+
+    example 'Form with one method' do
+      @form_page.fill_in_form_with(
+        first_name: first_name,
+        last_name: last_name,
+        job_title: job_title,
+        education_level: education_level,
+        sex: gender,
+        experience_level: experience_level
+      )
       submitted_page = @form_page.submit_form
 
       expect(submitted_page).to have_thank_you_message
