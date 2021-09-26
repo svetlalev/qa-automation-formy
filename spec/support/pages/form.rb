@@ -5,12 +5,17 @@ module Pages
     @@years_of_experience_select = 'select-menu'
     @@input_group_css = 'div.input-group'
 
-    def fill_in_names_with(first_name, last_name)
-      fill_in('first-name', with: first_name)
-      fill_in('last-name', with: last_name)
+    def fill_in_names_with(names = {})
+      if names.has_key?(:first_name)
+        fill_in('first-name', with: names[:first_name])
+      else
+        fill_in('first-name', with: Faker::Name.first_name)
+      end
+
+      names.has_key?(:last_name) ? fill_in('last-name', with: names[:last_name]) : fill_in('last-name', with: Faker::Name.last_name)
     end
 
-    def fill_in_job_title_with(job_title)
+    def fill_in_job_title_with(job_title = "QA")
       fill_in('job-title', with: job_title)
     end
 
@@ -33,6 +38,15 @@ module Pages
     def select_todays_date
       find('#datepicker').click
       find('td.today.day').click
+    end
+
+    def fill_in_form_with(options = {})
+      fill_in_names_with(first_name: options[:first_name], last_name: options[:last_name])
+      fill_in_job_title_with(options[:job_title]) if options.has_key?(:job_title)
+      select_education_level(options[:education_level]) if options.has_key?(:education_level)
+      select_gender(options[:sex]) if options.has_key?(:sex)
+      select_experience_level(options[:experience_level]) if options.has_key?(:experience_level)
+      select_todays_date
     end
 
     def submit_form
