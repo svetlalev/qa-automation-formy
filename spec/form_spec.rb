@@ -1,6 +1,6 @@
-include NavigationHelper
-
 describe 'Complete form', type: :feature do
+  include NavigationHelper
+
   let(:first_name) { Faker::Name.first_name }
   let(:last_name) { Faker::Name.last_name }
   let(:job_title) { Faker::Job.title }
@@ -18,7 +18,7 @@ describe 'Complete form', type: :feature do
     end
 
     # this test will fail as Radio buttons don't work as expected!
-    example 'Select two education levels and fist one gets unchecked' do
+    example 'Select two education levels and first one gets unchecked' do
       changed_education_level = 'High School'
       @form_page.select_education_level(changed_education_level)
 
