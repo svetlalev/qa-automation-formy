@@ -1,6 +1,6 @@
-include NavigationHelper
-
 describe 'Modal', type: :feature do
+  include NavigationHelper
+
   before do
     open_home_page
     @nav_bar = Components::NavBar.new
